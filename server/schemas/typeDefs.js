@@ -8,6 +8,18 @@ const { gql } = require('apollo-server-express');
 // look up thoughts by specific username
 // we can use the username parameter if we wanted
 // reactions: [Reaction] is nested inside thought as an array
+//saveBoo(authors: String!, description: String!, title: String!, bookId: String!, image: String!, link: String!): Book
+// type Book {
+//     _id: ID
+//     bookId: String
+//     authors: String
+//     description: String
+//     title: String
+//     image: String
+//     link: String
+    
+// }
+
 const typeDefs = gql`
 
     type User {
@@ -21,12 +33,11 @@ const typeDefs = gql`
     type Book {
         _id: ID
         bookId: String
-        authors: [String]
+        authors: String
         description: String
         title: String
         image: String
         link: String
-        
     }
 
     type Query {
@@ -36,8 +47,14 @@ const typeDefs = gql`
        
     }
 
+    input AuthorInput {
+        authors: String
+    }
+
     type Mutation {
         login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+        saveBook(authors: String!, description: String!, bookId: String!, image: String, link: String, title: String!): Book
     }
 
     type Auth {
