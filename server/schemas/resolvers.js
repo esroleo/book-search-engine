@@ -76,7 +76,6 @@ const resolvers = {
               // token is context which includes
               // username, email and _id.
              // console.log({args, username: context.user.username})
-             
              // const book = await User.create({ ...args, username: context.user.username });
           
               //console.log(book)
@@ -90,7 +89,32 @@ const resolvers = {
             }
              
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+        // removeBook
+        removeBook: async (parent, args, context) => {
+          //console.log(context.user)
+          //console.log(bookInput)
+          console.log(args)
+          
+
+          if (context.user) {
+            // token is context which includes
+            // username, email and _id.
+          // console.log({args, username: context.user.username})
+          // const book = await User.create({ ...args, username: context.user.username });
+        
+            //console.log(book)
+            const book = await User.findByIdAndUpdate(
+              { _id: context.user._id },
+              { $pull: { savedBooks: args } },
+              { new: true }
+            );
+        
+            return book;
+          }
+          
+          throw new AuthenticationError('You need to be logged in!');
+      },
     }
   };
   
