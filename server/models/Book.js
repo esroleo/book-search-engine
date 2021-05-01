@@ -8,10 +8,10 @@ const { Schema } = require('mongoose');
 // ],
 const bookSchema = new Schema({
 
-  authors: {
+  authors: [{
     type: String,
-    required: true,
-  },
+    //required: true,
+  }],
   description: {
     type: String,
     required: true,

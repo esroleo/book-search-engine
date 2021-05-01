@@ -1,4 +1,4 @@
-const { User, Book } = require('../models');
+const { User } = require('../models');
 // graphSQL error handling definition
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
@@ -66,21 +66,29 @@ const resolvers = {
 
             return { token, user };
         },
-        saveBook: async (parent, args, context) => {
+        //saveBook: async (parent, args, context) => {
+        saveBook: async (parent, {bookInput}, context) => {
+             console.log(context.user)
+             console.log(bookInput)
+             
+
             if (context.user) {
               // token is context which includes
               // username, email and _id.
-              const book = await Book.create({ ...args, username: context.user.username });
+             // console.log({args, username: context.user.username})
+             
+             // const book = await User.create({ ...args, username: context.user.username });
           
-              // await User.findByIdAndUpdate(
-              //   { _id: context.user._id },
-              //   { $push: { savedBooks: book._id } },
-              //   { new: true }
-              // );
+              //console.log(book)
+              const book = await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $push: { savedBooks: bookInput } },
+                { new: true }
+              );
           
               return book;
             }
-          
+             
             throw new AuthenticationError('You need to be logged in!');
         }
     }
