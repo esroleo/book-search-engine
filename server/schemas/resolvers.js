@@ -1,7 +1,7 @@
 const { User, Book } = require('../models');
 // graphSQL error handling definition
-//const { AuthenticationError } = require('apollo-server-express');
-//const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -16,16 +16,16 @@ const resolvers = {
         
             return userData;
             */
-        // me: async (parent, args, context) => {
-        //   if (context.user) {
-        //     const userData = await User.findOne({ _id: context.user._id })
-        //       .select('-__v -password')
-        //       .populate('book')
-        //     return userData;
-        //   }
+        me: async (parent, args, context) => {
+          if (context.user) {
+            const userData = await User.findOne({ _id: context.user._id })
+              .select('-__v -password')
+              .populate('book')
+            return userData;
+          }
         
-        //   throw new AuthenticationError('Not logged in');
-        // },
+          throw new AuthenticationError('Not logged in');
+        },
         // get all users
         users: async () => {
             return User.find()
@@ -36,9 +36,28 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select('-__v -password')
-            .populate('friends')
-            .populate('thoughts');
+            .populate('book')
         },
+    },
+    Mutation: {
+        // login resolver uses the authentication import
+        // AuthenticationError
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+          
+            if (!user) {
+              throw new AuthenticationError('Incorrect credentials');
+            }
+          
+            const correctPw = await user.isCorrectPassword(password);
+          
+            if (!correctPw) {
+              throw new AuthenticationError('Incorrect credentials');
+            }
+          
+            const token = signToken(user);
+            return { token, user };
+          }
     }
   };
   
