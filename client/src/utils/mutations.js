@@ -28,42 +28,42 @@ export const ADD_USER = gql`
   }
 `;
 
-// save book
-export const SAVE_BOOK = gql`
-  mutation login($bookInput: BookInput!) {
-    saveBook(bookInput: $bookInput) {   
-      username
-      email
-      savedBooks {
-        authors
-        description
-        bookId
-        image
-        link
-        title
-      }
-    }
-  }
-`;
-
+// // save book
 // export const SAVE_BOOK = gql`
-//     mutation saveBook($bookInput: BookInput!){
-//         saveBook(bookInput :$bookInput)
-//         {
-//             _id
-//             username
-//             email
-//             savedBooks {
-//               bookId
-//               authors
-//               image
-//               description
-//               title
-//               link
-//             }
-//         }
+//   mutation login($bookInput: BookInput!) {
+//     saveBook(bookInput: $bookInput) {   
+//       username
+//       email
+//       savedBooks {
+//         authors
+//         description
+//         bookId
+//         image
+//         link
+//         title
+//       }
 //     }
+//   }
 // `;
+
+export const SAVE_BOOK = gql`
+    mutation saveBook($bookInput: BookInput!){
+        saveBook(bookInput :$bookInput)
+        {
+            _id
+            username
+            email
+            savedBooks {
+              bookId
+              authors
+              image
+              description
+              title
+              link
+            }
+        }
+    }
+`;
 
 //remove book
 
