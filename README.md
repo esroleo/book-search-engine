@@ -21,7 +21,7 @@ This is a full stack web application that was built using REACT, Bootstrap, Grap
 
 ### Major tech snapshot
 
-![tech](read-me-images/tech-used.JPG?raw=true "code-used.JPG")
+![tech](assets/images/tech-used.JPG?raw=true "code-used.JPG")
 
 <a name="web-address"></a>
 ## 2. How to Get There
@@ -53,13 +53,12 @@ Application is both desktop and mobile friendly.
 
 ### Main Page
 
-![step](./read-me-images/main-page-desktop.JPG?raw=true "main-page-desktop.JPG")
+![step](assets/images/landing-page.JPG?raw=true "landing-page.JPG")
 
-![step](./read-me-images//main-page-small-device.JPG?raw=true "main-page-small-device.JPG")
 
-### Main Page Nav Bar
+### Sign in 
 
-![step](./read-me-images/main-page-desktop-nav-bar.JPG?raw=true "main-page-desktop-nav-bar.JPG")
+![step](assets/images/sign-in-page.JPG?raw=true "sign-in-page.JPG")
 
 ![step](./read-me-images/main-page-small-device-nav-bar.JPG?raw=true "main-page-small-device-nav-bar.JPG")
 
