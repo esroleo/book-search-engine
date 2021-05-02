@@ -56,42 +56,41 @@ Application is both desktop and mobile friendly.
 ![step](assets/images/landing-page.JPG?raw=true "landing-page.JPG")
 
 
-### Sign in 
+### Sign In
 
 ![step](assets/images/sign-in-page.JPG?raw=true "sign-in-page.JPG")
 
-![step](./read-me-images/main-page-small-device-nav-bar.JPG?raw=true "main-page-small-device-nav-bar.JPG")
+### Log In
 
-### Portfolio
-
-![step](./read-me-images/portfolio-smaller-device.JPG?raw=true "portfolio-smaller-device.JPG")
+![step](assets/images/log-in-page.JPG?raw=true "log-in-page.JPG")
 
 
-### Resume
+### Search Book
 
-You can also download my resume by clicking on the download resume. If you get a network error, it could be a firewall issue.
-Please feel free to contact me and I will provide it to you. 
-
-![step](./read-me-images/resume-smaller-device.JPG?raw=true "resume-smaller-device.JPG")
+![step](assets/images/search-book.JPG?raw=true "search-book.JPG")
 
 
-### Contact 
+### Google Book Link 
 
-![step](./read-me-images/contact-smaller-device.JPG?raw=true "contact-smaller-device.JPG")
+![step](assets/images/google-book-link.JPG?raw=true "google-book-link.JPG")
 
 
-### Contact Validation
+### Books Saved
 
-![step](./read-me-images/contact-validation-name.JPG?raw=true "contact-validation-name.JPG")
+![step](assets/images/books-saved.JPG?raw=true "books-saved.JPG")
 
-![step](./read-me-images/contact-validation-email.JPG?raw=true "contact-validation-email.JPG")
+### Saved Books Screen
 
-![step](./read-me-images/contact-validation-description.JPG?raw=true "contact-validation-description.JPG")
+![step](assets/images/saved-books-screen.JPG?raw=true "saved-books-screen.JPG")
+
 
 <a name="credits"></a>
 ## 5. Credits
 
 REACT for creating such an amazing way of rending our web pages!
+GraphQL for making it possible to use another tech besided REST API
+Apollo Server for allowing integration between REACT and Graphql
+MongoDB for the NOSql Technology and all other dependencies on the app.
 
 <a name="licenses"></a>
 ## 6. Licenses
