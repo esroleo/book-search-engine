@@ -48,7 +48,6 @@ If you are still interested in running the application you would need to do the 
 <a name="features"></a>
 ## 4. Features
 
-Application is both desktop and mobile friendly.
 ### Application is both desktop and mobile friendly.
 
 ### Main Page
