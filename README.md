@@ -55,7 +55,7 @@ If you are still interested in running the application you would need to do the 
 ![step](assets/images/landing-page.JPG?raw=true "landing-page.JPG")
 
 
-### Sign In
+### Sign up
 
 ![step](assets/images/sign-in-page.JPG?raw=true "sign-in-page.JPG")
 
